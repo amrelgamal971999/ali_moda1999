@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ALI MODA | general trading</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+brand: {
+gold: '#c5a880',
+'gold-light': '#dfc9a9',
+'gold-dark': '#9f8053',
+obsidian: '#111111',
+charcoal: '#18181b',
+bone: '#f7f6f2'
+}
+},
+fontFamily: {
+serif: ['Cinzel', 'serif'],
+sans: ['Tajawal', 'sans-serif'],
+en: ['Montserrat', 'sans-serif'],
+hi: ['Noto Sans Devanagari', 'sans-serif']
+}
+}
+}
+}
+</script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body {
+font-family: 'Tajawal', sans-serif;
+background-color: #f7f6f2;
+color: #18181b;
+-webkit-tap-highlight-color: transparent;
+overflow-x: hidden;
+}
+.lang-hi body, [dir="ltr"].lang-hi {
+font-family: 'Noto Sans Devanagari', sans-serif;
+}
+.brand-title {
+font-family: 'Cinzel', serif;
+letter-spacing: 0.18em;
+}
+.custom-scroll::-webkit-scrollbar {
+height: 4px;
+width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+background: #c5a880;
+border-radius: 9999px;
+}
+.img-zoom {
+transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .img-zoom {
+transform: scale(1.05);
+}
+.gold-gradient {
+background: linear-gradient(135deg, #dfc9a9 0%, #c5a880 50%, #9e7f53 100%);
+}
+</style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-gold selection:text-white pb-20 md:pb-8">
+<!-- TOP TICKER -->
+<div class="bg-brand-obsidian text-stone-300 text-xs py-2 px-4 border-b border-stone-800 flex justify-between items-center z-50">
+<div class="hidden md:flex items-center gap-2 text-[11px] font-en tracking-wider text-brand-gold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+BAHRAIN BOUTIQUE • ONLINE CATALOGUE
+</div>
+<div class="mx-auto md:mx-0 flex items-center gap-2 text-[11px] font-medium" id="tickerText">
+✨ ALI MODA general trading | كتالوج الأحذية، الكعب، الحقائب، تشكيلة الأطفال والإكسسوارات
+</div>
+<!-- Quick Language Selector (AR / EN / HI) -->
+<div class="flex items-center gap-1.5 text-[11px]">
+<button onclick="changeLanguage('ar')" id="langBtn-ar" class="font-bold text-brand-gold px-1.5 py-0.5 rounded transition">العربية</button>
+<span class="text-stone-600">|</span>
+<button onclick="changeLanguage('en')" id="langBtn-en" class="hover:text-brand-gold px-1.5 py-0.5 font-en text-stone-400 transition">EN</button>
+<span class="text-stone-600">|</span>
+<button onclick="changeLanguage('hi')" id="langBtn-hi" class="hover:text-brand-gold px-1.5 py-0.5 font-hi text-stone-400 transition">हिन्दी</button>
+</div>
+</div>
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm transition">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- LOGO: ALI MODA / general trading -->
+<a href="#" onclick="showCatalogView(); return false;" class="flex flex-col text-left group">
+<span class="text-2xl sm:text-3xl font-black tracking-widest brand-title text-stone-950 group-hover:text-brand-gold transition duration-300 leading-none">
+ALI MODA
+</span>
+<span class="text-[11px] tracking-[0.24em] text-brand-gold-dark font-medium font-en lowercase mt-1">
+general trading
+</span>
+</a>
+<!-- Desktop Search -->
+<div class="hidden md:flex items-center flex-1 max-w-sm mx-8">
+<div class="relative w-full">
+<input 
+type="text" 
+id="desktopSearchInput" 
+oninput="handleSearch(this.value)" 
+placeholder="ابحث عن حذاء، حقيبة، كعب، مقاس 42، لون..." 
+class="w-full bg-stone-100 border border-stone-200 rounded-full py-2 px-4 pr-10 text-xs focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition"
+>
+<i data-lucide="search" class="w-4 h-4 text-stone-400 absolute right-3 top-2.5"></i>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 sm:gap-3">
+<!-- Instagram Link -->
+<a 
+href="https://instagram.com/ali_moda20" 
+target="_blank" 
+rel="noopener noreferrer"
+class="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 hover:text-rose-600 hover:border-rose-400 hover:bg-rose-50 transition"
+title="Instagram: ali_moda20">
+<i data-lucide="instagram" class="w-4 h-4"></i>
+</a>
+<!-- WhatsApp Link -->
+<a 
+id="headerWhatsappBtn"
+href="https://wa.me/9736668786" 
+target="_blank" 
+rel="noopener noreferrer"
+class="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 hover:text-emerald-600 hover:border-emerald-400 hover:bg-emerald-50 transition"
+title="WhatsApp: 6668786">
+<i data-lucide="message-circle" class="w-4 h-4"></i>
+</a>
+<!-- Admin Secure Access (971999) -->
+<button 
+id="adminSwitchBtn"
+onclick="handleAdminEntry()" 
+class="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border text-xs font-bold transition shadow-sm bg-stone-900 text-white hover:bg-black border-stone-900">
+<i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-gold"></i>
+<span id="adminBtnLabel">بوابة المالك</span>
+</button>
+</div>
+</div>
+<!-- Mobile Search -->
+<div class="px-4 pb-3 md:hidden">
+<div class="relative w-full">
+<input 
+type="text" 
+id="mobileSearchInput" 
+oninput="handleSearch(this.value)" 
+placeholder="ابحث في الكتالوج..." 
+class="w-full bg-stone-100 border border-stone-200 rounded-full py-2 px-4 pr-10 text-xs focus:outline-none focus:border-brand-gold transition"
+>
+<i data-lucide="search" class="w-4 h-4 text-stone-400 absolute right-3 top-2.5"></i>
+</div>
+</div>
+</header>
+<!-- CONTENT -->
+<main class="flex-grow">
+<!-- ================= VIEW 1: PUBLIC LUXURY CATALOG ================= -->
+<div id="viewCatalog" class="block">
+<!-- HERO -->
+<section class="relative bg-brand-obsidian text-white py-12 sm:py-16 px-4 overflow-hidden border-b border-stone-800">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#c5a880_1px,transparent_1px)] [background-size:20px_20px]"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10 space-y-3">
+<div class="inline-block">
+<span class="text-xl sm:text-2xl font-black tracking-widest brand-title text-brand-gold block">ALI MODA</span>
+<span class="text-xs tracking-[0.25em] text-stone-300 font-en lowercase block -mt-1">general trading</span>
+</div>
+<h1 id="heroTitle" class="text-2xl sm:text-4xl font-black text-stone-50 font-serif pt-1">
+كتالوج التميز والفخامة
+</h1>
+<p id="heroSubtitle" class="text-xs sm:text-sm text-stone-400 max-w-xl mx-auto leading-relaxed">
+اختر القسم، حدد مقاسك المفضل وتواصل معنا مباشرة عبر واتساب مع السعر والديسكاونت المعتمد.
+</p>
+<div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+<a href="#catalogArea" id="heroBrowseBtn" class="px-6 py-2.5 rounded-full text-xs font-bold text-stone-950 gold-gradient hover:opacity-95 shadow-md">
+تصفح التشكيلات
+</a>
+<a 
+id="heroWaChat"
+href="https://wa.me/9736668786?text=مرحباً%20ALI%20MODA" 
+target="_blank"
+class="px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur transition flex items-center gap-1.5">
+<i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+<span>واتساب (6668786)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- TICKER / ANNOUNCEMENTS -->
+<div id="liveUpdatesBar" class="bg-stone-200/70 border-b border-stone-300/80 py-2.5 px-4 overflow-hidden">
+<div class="max-w-7xl mx-auto flex items-center gap-3 text-xs">
+<span id="announcementBadge" class="px-2.5 py-0.5 rounded-full bg-brand-obsidian text-brand-gold text-[10px] font-bold whitespace-nowrap">
+آخر الأخبار
+</span>
+<div id="storeUpdatesTicker" class="truncate text-stone-800 font-medium"></div>
+</div>
+</div>
+<!-- CATALOG AREA -->
+<section id="catalogArea" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- MAIN GENDER / SECTION FILTER BAR (الرجال، النساء، الأكعب، الأطفال، الحقائب، الإكسسوارات) -->
+<div class="mb-4">
+<div class="text-xs font-bold text-stone-500 mb-2 flex items-center gap-1">
+<i data-lucide="layers" class="w-3.5 h-3.5 text-brand-gold-dark"></i>
+<span id="mainSectionsLabel">الأقسام الرئيسية:</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-2 custom-scroll" id="mainGenderTabs"></div>
+</div>
+<!-- Sub-Categories & Quick Filters -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div class="flex items-center gap-1.5 overflow-x-auto pb-2 custom-scroll" id="catalogSubCategoryTabs"></div>
+<div class="flex items-center gap-2 text-xs flex-shrink-0">
+<button onclick="setQuickFilter('all')" id="qf-all" class="quick-filter-btn px-3 py-1.5 rounded-xl border bg-stone-900 text-white font-bold transition">
+الكل
+</button>
+<button onclick="setQuickFilter('offers')" id="qf-offers" class="quick-filter-btn px-3 py-1.5 rounded-xl border border-stone-200 bg-white text-stone-700 hover:border-brand-gold flex items-center gap-1 font-medium transition">
+<i data-lucide="tag" class="w-3.5 h-3.5 text-amber-600"></i>
+<span id="qfOffersLabel">الديسكاونت والعروض</span>
+</button>
+<button onclick="setQuickFilter('new')" id="qf-new" class="quick-filter-btn px-3 py-1.5 rounded-xl border border-stone-200 bg-white text-stone-700 hover:border-brand-gold flex items-center gap-1 font-medium transition">
+<i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold-dark"></i>
+<span id="qfNewLabel">وصل حديثاً</span>
+</button>
+</div>
+</div>
+<!-- PRODUCTS GRID -->
+<div id="productsGrid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"></div>
+<!-- EMPTY STATE -->
+<div id="emptyCatalogState" class="hidden text-center py-16">
+<div class="w-14 h-14 rounded-full bg-stone-200 flex items-center justify-center mx-auto mb-3 text-stone-400">
+<i data-lucide="package-search" class="w-7 h-7"></i>
+</div>
+<h3 id="emptyTitle" class="text-sm font-bold text-stone-800">لا توجد منتجات مطابقة لهذا القسم أو البحث</h3>
+<p id="emptySub" class="text-xs text-stone-500 mt-1">اختر قسماً آخر أو تفضل بالتواصل معنا عبر واتساب لمعرفة المتوفر في المحل.</p>
+</div>
+</section>
+</div>
+<!-- ================= VIEW 2: SECURED OWNER CONTROL PANEL (971999) ================= -->
+<div id="viewAdmin" class="hidden max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+<!-- Top Owner Banner -->
+<div class="bg-white rounded-3xl border border-stone-200 p-5 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+<h2 class="text-base sm:text-lg font-black text-stone-900">
+لوحة تحكم المالك | ALI MODA <span class="font-en lowercase text-xs font-normal text-brand-gold-dark">general trading</span>
+</h2>
+</div>
+<p class="text-xs text-stone-500 mt-0.5">
+التحكم الكامل: إضافة وتعديل الأسعار والديسكاونت (قبل وبعد)، رفع الصور، وإدارة مقاسات وأقسام المتجر.
+</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button onclick="showCatalogView()" class="px-3.5 py-1.5 border border-stone-300 rounded-xl text-xs font-bold text-stone-700 hover:bg-stone-50">
+معاينة المتجر
+</button>
+<button onclick="openChangePasscodeModal()" class="px-3.5 py-1.5 border border-stone-300 rounded-xl text-xs font-bold text-stone-700 hover:bg-stone-50">
+تغيير رمز 971999
+</button>
+<button onclick="adminLogout()" class="px-3.5 py-1.5 bg-rose-50 text-rose-700 border border-rose-200 rounded-xl text-xs font-bold hover:bg-rose-100 flex items-center gap-1">
+<i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+خروج
+</button>
+</div>
+</div>
+<!-- Admin Navigation Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 border-b border-stone-200 mb-6 custom-scroll text-xs">
+<button onclick="switchAdminTab('products')" id="admTabBtn-products" class="adm-tab-btn px-4 py-2 rounded-xl font-bold bg-stone-900 text-white shadow">
+المنتجات والمعروضات (<span id="admProductsCount">0</span>)
+</button>
+<button onclick="switchAdminTab('form')" id="admTabBtn-form" class="adm-tab-btn px-4 py-2 rounded-xl font-semibold text-stone-600 hover:bg-stone-200 flex items-center gap-1">
+<i data-lucide="plus-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+إضافة منتج مع ديسكاونت
+</button>
+<button onclick="switchAdminTab('categories')" id="admTabBtn-categories" class="adm-tab-btn px-4 py-2 rounded-xl font-semibold text-stone-600 hover:bg-stone-200">
+إدارة الأقسام (رجال، نساء، أطفال، حقائب، أكعب، إكسسوارات)
+</button>
+<button onclick="switchAdminTab('updates')" id="admTabBtn-updates" class="adm-tab-btn px-4 py-2 rounded-xl font-semibold text-stone-600 hover:bg-stone-200">
+شريط العروض والإعلانات
+</button>
+<button onclick="switchAdminTab('settings')" id="admTabBtn-settings" class="adm-tab-btn px-4 py-2 rounded-xl font-semibold text-stone-600 hover:bg-stone-200">
+أرقام التواصل (واتساب وإنستغرام)
+</button>
+</div>
+<!-- TAB 1: PRODUCT LIST TABLE -->
+<div id="admTab-products" class="adm-tab-content">
+<div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
+<div class="p-4 border-b border-stone-200 bg-stone-50 flex justify-between items-center">
+<span class="text-xs font-bold text-stone-800">قائمة معروضات الكتالوج الحالية</span>
+<button onclick="openNewProductForm()" class="px-3.5 py-1.5 rounded-xl bg-stone-900 hover:bg-black text-white text-xs font-bold flex items-center gap-1.5 shadow">
+<i data-lucide="plus" class="w-3.5 h-3.5 text-brand-gold"></i>
+إضافة قطعة الآن
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right text-xs">
+<thead class="bg-stone-100 text-stone-600 uppercase font-semibold">
+<tr>
+<th class="p-3">المنتج والصورة</th>
+<th class="p-3">القسم والتصنيف</th>
+<th class="p-3">السعر الأصلي (قبل)</th>
+<th class="p-3">الديسكاونت (بعد)</th>
+<th class="p-3">المقاسات (Sizes)</th>
+<th class="p-3">الحالة</th>
+<th class="p-3 text-center">التحكم</th>
+</tr>
+</thead>
+<tbody id="adminProductsTbody" class="divide-y divide-stone-100 font-medium"></tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- TAB 2: ADD / EDIT PRODUCT FORM -->
+<div id="admTab-form" class="adm-tab-content hidden">
+<div class="bg-white rounded-3xl border border-stone-200 p-5 sm:p-8 max-w-3xl mx-auto shadow-sm">
+<div class="border-b pb-4 mb-5 flex justify-between items-center">
+<div>
+<h3 id="formTitle" class="text-base sm:text-lg font-bold text-stone-900">إضافة قطعة جديدة للكتالوج</h3>
+<p class="text-xs text-stone-500 mt-0.5">ارفع الصور من هاتفك، حدد السعر قبل وبعد الديسكاونت، والمقاسات بالكامل.</p>
+</div>
+<button onclick="switchAdminTab('products')" class="text-xs text-stone-500 hover:text-stone-900 font-semibold">إلغاء</button>
+</div>
+<form id="productForm" onsubmit="handleProductFormSubmit(event)" class="space-y-5">
+<input type="hidden" id="editingProductId" value="">
+<!-- Image Upload -->
+<div>
+<label class="block text-xs font-bold text-stone-800 mb-2">
+صور المنتج (التقاط فوري بكاميرا الهاتف أو اختيار من الألبوم) *
+</label>
+<div class="border-2 border-dashed border-stone-300 rounded-2xl p-5 text-center hover:border-brand-gold bg-stone-50 transition cursor-pointer" onclick="document.getElementById('productImagePicker').click()">
+<input 
+type="file" 
+id="productImagePicker" 
+accept="image/*" 
+multiple 
+onchange="handleSelectedImages(event)" 
+class="hidden"
+>
+<div class="w-11 h-11 rounded-full bg-white shadow flex items-center justify-center text-brand-gold-dark mx-auto mb-2">
+<i data-lucide="camera" class="w-5 h-5"></i>
+</div>
+<span class="text-xs sm:text-sm font-bold text-stone-800 block">اضغط هنا لرفع الصور (صورة واحدة أو عدة صور)</span>
+<span class="text-[10px] text-stone-400 mt-0.5 block">يتم ضغط الصورة تلقائياً للحفاظ على الألوان والسرعة الفائقة</span>
+</div>
+<div id="imagePreviewContainer" class="flex flex-wrap gap-2 mt-3"></div>
+</div>
+<!-- Product Names (AR, EN, HI) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">اسم المنتج بالعربية *</label>
+<input type="text" id="inpNameAr" required placeholder="مثال: حذاء كلاسيك جلد / كعب سهرة" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none">
+</div>
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">الاسم بالإنجليزية (EN)</label>
+<input type="text" id="inpNameEn" placeholder="Leather Oxford / High Heels" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs font-en">
+</div>
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">الاسم بالهندية (HI - हिन्दी)</label>
+<input type="text" id="inpNameHi" placeholder="क्लासिक लेदर जूते / हील्स" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs font-hi">
+</div>
+</div>
+<!-- Category & Status -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">القسم والتصنيف *</label>
+<select id="inpCategory" required class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none bg-white font-medium"></select>
+</div>
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">حالة التوفر بالمحل</label>
+<select id="inpStatus" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs bg-white font-medium">
+<option value="متوفر">متوفر في المحل</option>
+<option value="كمية محدودة">كمية محدودة</option>
+<option value="طلب مسبق">طلب مسبق</option>
+<option value="نفذت الكمية">نفذت الكمية</option>
+</select>
+</div>
+</div>
+<!-- DISCOUNT & PRICE SECTION (قبل وبعد الديسكاونت) -->
+<div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-200/80 space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-amber-950 flex items-center gap-1.5">
+<i data-lucide="badge-percent" class="w-4 h-4 text-amber-600"></i>
+إدارة الأسعار والديسكاونت (Discount)
+</span>
+<span class="text-[10px] text-amber-800">العملة: دينار بحريني (د.ب)</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">السعر الأصلي (قبل الخصم) *</label>
+<input type="number" step="0.050" min="0" id="inpPrice" required placeholder="مثال: 15.000" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none font-bold">
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="text-xs font-bold text-stone-700">السعر بعد الديسكاونت (اختياري)</label>
+<label class="text-[10px] text-stone-500 flex items-center gap-1 cursor-pointer">
+<input type="checkbox" id="inpIsOffer" onchange="toggleDiscountFields(this.checked)" class="w-3.5 h-3.5 rounded text-brand-gold">
+تفعيل ديسكاونت
+</label>
+</div>
+<input type="number" step="0.050" min="0" id="inpOfferPrice" disabled placeholder="مثال: 11.500" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none font-bold bg-stone-100 disabled:opacity-50">
+</div>
+</div>
+</div>
+<!-- SIZES SELECTOR & MANAGER (35-48, 20-35, S/M/L/XL, One Size) -->
+<div class="bg-stone-50/80 p-4 rounded-2xl border border-stone-200 space-y-3">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-stone-800 block">أداة تحديد المقاسات (Sizes):</label>
+<span class="text-[10px] text-stone-400">انقر فوق الأزرار السريعة أو اكتب يدويًا</span>
+</div>
+<!-- Quick presets buttons -->
+<div class="space-y-2">
+<!-- Shoes 35 to 48 -->
+<div class="flex items-start gap-1.5">
+<span class="text-[10px] font-bold text-stone-500 w-20 flex-shrink-0 pt-1">أحذية (35–48):</span>
+<div class="flex flex-wrap gap-1">
+<button type="button" onclick="appendQuickSize('35')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">35</button>
+<button type="button" onclick="appendQuickSize('36')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">36</button>
+<button type="button" onclick="appendQuickSize('37')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">37</button>
+<button type="button" onclick="appendQuickSize('38')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">38</button>
+<button type="button" onclick="appendQuickSize('39')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">39</button>
+<button type="button" onclick="appendQuickSize('40')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">40</button>
+<button type="button" onclick="appendQuickSize('41')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">41</button>
+<button type="button" onclick="appendQuickSize('42')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">42</button>
+<button type="button" onclick="appendQuickSize('43')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">43</button>
+<button type="button" onclick="appendQuickSize('44')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">44</button>
+<button type="button" onclick="appendQuickSize('45')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">45</button>
+<button type="button" onclick="appendQuickSize('46')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">46</button>
+<button type="button" onclick="appendQuickSize('47')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">47</button>
+<button type="button" onclick="appendQuickSize('48')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">48</button>
+</div>
+</div>
+<!-- Kids 20 to 35 -->
+<div class="flex items-start gap-1.5">
+<span class="text-[10px] font-bold text-stone-500 w-20 flex-shrink-0 pt-1">أطفال (20–35):</span>
+<div class="flex flex-wrap gap-1">
+<button type="button" onclick="appendQuickSize('20')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">20</button>
+<button type="button" onclick="appendQuickSize('22')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">22</button>
+<button type="button" onclick="appendQuickSize('24')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">24</button>
+<button type="button" onclick="appendQuickSize('26')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">26</button>
+<button type="button" onclick="appendQuickSize('28')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">28</button>
+<button type="button" onclick="appendQuickSize('30')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">30</button>
+<button type="button" onclick="appendQuickSize('32')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">32</button>
+<button type="button" onclick="appendQuickSize('34')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-mono hover:border-black active:scale-95">34</button>
+</div>
+</div>
+<!-- Bag & Accessories -->
+<div class="flex items-start gap-1.5">
+<span class="text-[10px] font-bold text-stone-500 w-20 flex-shrink-0 pt-1">حقائب/أخرى:</span>
+<div class="flex flex-wrap gap-1 font-en">
+<button type="button" onclick="appendQuickSize('S')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-bold hover:border-black active:scale-95">S</button>
+<button type="button" onclick="appendQuickSize('M')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-bold hover:border-black active:scale-95">M</button>
+<button type="button" onclick="appendQuickSize('L')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-bold hover:border-black active:scale-95">L</button>
+<button type="button" onclick="appendQuickSize('XL')" class="px-2 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-bold hover:border-black active:scale-95">XL</button>
+<button type="button" onclick="appendQuickSize('One Size')" class="px-2.5 py-0.5 bg-white border border-stone-300 rounded text-[11px] font-medium hover:border-black active:scale-95 font-sans">مقاس موحد (One Size)</button>
+<button type="button" onclick="clearSizesInput()" class="px-2 py-0.5 bg-stone-200 text-stone-600 rounded text-[11px] hover:bg-stone-300 active:scale-95 font-sans">مسح المقاسات</button>
+</div>
+</div>
+</div>
+<!-- Sizes Text Input -->
+<input 
+type="text" 
+id="inpSizes" 
+placeholder="40, 41, 42, 43, 44..." 
+class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none bg-white font-mono"
+>
+</div>
+<!-- Colors & Description -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">الألوان (افصل بينها بفاصلة)</label>
+<input type="text" id="inpColors" placeholder="مثال: أسود, بني, كحلي, بيج" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none">
+</div>
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">وصف الموديل والخامة</label>
+<input type="text" id="inpDescAr" placeholder="جلد طبيعي ناعم، كعب سهرة، نعل طبي مريح..." class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:ring-1 focus:ring-brand-gold focus:outline-none">
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-3 pt-3 border-t">
+<button type="button" onclick="cancelProductEdit()" class="px-4 py-2 border border-stone-300 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-50">
+إلغاء
+</button>
+<button type="submit" class="px-6 py-2.5 bg-stone-950 hover:bg-black text-white rounded-xl text-xs font-bold shadow flex items-center gap-1.5">
+<i data-lucide="check" class="w-4 h-4 text-brand-gold"></i>
+حفظ ونشر في الكتالوج
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- TAB 3: EXPANDED CATEGORIES MANAGER -->
+<div id="admTab-categories" class="adm-tab-content hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Add Category Form -->
+<div class="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm">
+<h4 class="text-sm font-bold text-stone-900 mb-2">إضافة قسم جديد</h4>
+<p class="text-[11px] text-stone-500 mb-4">أضف أي قسم تريده مع تحديد التصنيف العام (رجال، نساء، أطفال، حقائب، أكعب، إكسسوارات).</p>
+<form onsubmit="handleCategoryAdd(event)" class="space-y-3">
+<div>
+<label class="block text-xs text-stone-700 font-bold mb-1">اسم القسم (بالعربية) *</label>
+<input type="text" id="catInpNameAr" required placeholder="مثال: أحذية كلاسيك / كعب سهرة" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs">
+</div>
+<div>
+<label class="block text-xs text-stone-700 font-bold mb-1">الاسم بالإنجليزية (EN)</label>
+<input type="text" id="catInpNameEn" placeholder="Classic Shoes / Evening Heels" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs font-en">
+</div>
+<div>
+<label class="block text-xs text-stone-700 font-bold mb-1">الاسم بالهندية (HI - हिन्दी)</label>
+<input type="text" id="catInpNameHi" placeholder="क्लासिक जूते / हील्स" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs font-hi">
+</div>
+<div>
+<label class="block text-xs text-stone-700 font-bold mb-1">القسم الرئيسي</label>
+<select id="catInpGender" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs bg-white font-medium">
+<option value="رجال">رجال (Men)</option>
+<option value="نساء">نساء (Women)</option>
+<option value="أكعب">أكعب (Heels)</option>
+<option value="أطفال">أطفال (Kids)</option>
+<option value="حقائب">حقائب (Bags)</option>
+<option value="إكسسوارات">إكسسوارات (Accessories)</option>
+</select>
+</div>
+<button type="submit" class="w-full py-2.5 rounded-xl gold-gradient text-stone-950 font-bold text-xs shadow mt-2">
+حفظ القسم الجديد
+</button>
+</form>
+</div>
+<!-- Existing Categories List -->
+<div class="md:col-span-2 bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<div>
+<h4 class="text-sm font-bold text-stone-900">الأقسام الشاملة المعتمدة في المتجر</h4>
+<p class="text-[11px] text-stone-400">تغطي: رجال، نساء، أطفال، حقائب، أكعب، إكسسوارات</p>
+</div>
+<button onclick="restoreDefaultCategories()" class="text-[11px] text-brand-gold-dark hover:underline font-bold">
+إعادة ضبط الأقسام الافتراضية
+</button>
+</div>
+<div id="admCategoriesList" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs"></div>
+</div>
+</div>
+</div>
+<!-- TAB 4: STORE UPDATES -->
+<div id="admTab-updates" class="adm-tab-content hidden">
+<div class="bg-white p-5 sm:p-7 rounded-2xl border border-stone-200 max-w-2xl mx-auto shadow-sm">
+<h4 class="text-sm font-bold text-stone-900 mb-1">إضافة إعلان أو شريط عروض علوي</h4>
+<p class="text-xs text-stone-500 mb-4">يظهر فوراً في شريط التنبيهات بأعلى الكتالوج لجذب الزبائن.</p>
+<form onsubmit="handleUpdateAdd(event)" class="space-y-3">
+<input type="text" id="inpUpdateText" required placeholder="مثال: خصم 20% على قسم الأحذية الرجالية والشباشب الفاخرة لفترة محدودة!" class="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs">
+<button type="submit" class="px-5 py-2.5 bg-stone-950 text-white font-bold rounded-xl text-xs">
+نشر الإعلان
+</button>
+</form>
+<div class="mt-6 border-t pt-4">
+<h5 class="text-xs font-bold text-stone-800 mb-3">الإعلانات المنشورة:</h5>
+<div id="admUpdatesList" class="space-y-2 text-xs"></div>
+</div>
+</div>
+</div>
+<!-- TAB 5: CONTACT SETTINGS -->
+<div id="admTab-settings" class="adm-tab-content hidden">
+<div class="bg-white p-5 sm:p-7 rounded-2xl border border-stone-200 max-w-md mx-auto shadow-sm">
+<h4 class="text-sm font-bold text-stone-900 mb-1">بيانات التواصل مع الزبائن</h4>
+<p class="text-xs text-stone-500 mb-4">تعديل رقم واتساب أو حساب إنستغرام الخاص بالمتجر.</p>
+<form onsubmit="handleSettingsSave(event)" class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">رقم واتساب المحل (مملكة البحرين)</label>
+<input type="text" id="inpSettingWa" required value="6668786" class="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs font-mono text-left" dir="ltr">
+<span class="text-[10px] text-stone-400">الرقم الحالي: 6668786 (+973)</span>
+</div>
+<div>
+<label class="block text-xs font-bold text-stone-700 mb-1">حساب Instagram الرسمي</label>
+<div class="flex items-center">
+<span class="px-3 py-2 bg-stone-100 border border-l-0 border-stone-300 rounded-r-xl text-xs text-stone-500 font-mono">@</span>
+<input type="text" id="inpSettingInsta" required value="ali_moda20" class="w-full px-3 py-2 border border-stone-300 rounded-l-xl text-xs font-mono text-left" dir="ltr">
+</div>
+</div>
+<button type="submit" class="w-full py-2.5 bg-stone-900 hover:bg-black text-white font-bold rounded-xl text-xs shadow">
+حفظ وتطبيق
+</button>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="bg-brand-obsidian text-stone-400 pt-12 pb-8 border-t border-stone-800 text-xs mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-center md:text-right">
+<!-- Logo in Footer -->
+<div class="space-y-2">
+<div class="flex flex-col">
+<span class="text-2xl font-black tracking-widest brand-title text-stone-100 leading-none">ALI MODA</span>
+<span class="text-[10px] tracking-[0.24em] text-brand-gold font-medium font-en lowercase mt-1">general trading</span>
+</div>
+<p id="footerAboutText" class="text-stone-400 text-xs leading-relaxed pt-1">
+المتجر الرائد للأحذية الرجالية، الكعب والشباشب النسائية، تشكيلات الأطفال، الحقائب والإكسسوارات الفاخرة في مملكة البحرين.
+</p>
+</div>
+<div>
+<h4 id="footerSectionsTitle" class="text-stone-200 font-bold mb-2">أقسام الكتالوج</h4>
+<ul class="space-y-1 text-stone-400 text-xs" id="footerSectionsList">
+<li>رجال: كلاسيك، سنيكرز، شباشب شرقية</li>
+<li>نساء: أحذية مريحة، شباشب، فلات</li>
+<li>أكعب: كعب عالي، كعب مريح، سهرة</li>
+<li>أطفال: ولادي، بناتي، ومواليد</li>
+<li>حقائب: يد، كتف، وسهرة</li>
+<li>إكسسوارات: أحزمة، ومحافظ جلدية</li>
+</ul>
+</div>
+<div>
+<h4 id="footerContactTitle" class="text-stone-200 font-bold mb-2">التواصل والطلب المباشر</h4>
+<p>مملكة البحرين - Kingdom of Bahrain</p>
+<p class="font-mono mt-1 text-stone-300">WhatsApp: +973 6668786</p>
+<p class="font-en text-stone-300">Instagram: @ali_moda20</p>
+</div>
+<div class="flex flex-col items-center md:items-start gap-2">
+<h4 class="text-stone-200 font-bold mb-1">Instagram Official</h4>
+<a 
+href="https://instagram.com/ali_moda20" 
+target="_blank" 
+rel="noopener noreferrer" 
+class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 transition">
+<i data-lucide="instagram" class="w-4 h-4 text-rose-400"></i>
+<span class="font-mono">ali_moda20</span>
+</a>
+</div>
+</div>
+<div class="border-t border-stone-800/80 pt-6 text-center text-stone-500 text-[11px] flex flex-col sm:flex-row justify-between items-center gap-2">
+<div>© <span id="yearVal"></span> ALI MODA general trading. <span id="copyrightNotice">جميع الحقوق محفوظة | كتالوج إلكتروني رسمي</span></div>
+<div class="text-[10px] text-stone-600">نظام إدارة الكتالوج والديسكاونت المشفر بكود المالك 971999</div>
+</div>
+</div>
+</footer>
+<!-- FLOATING BUTTONS -->
+<div class="fixed bottom-5 left-4 z-50 flex flex-col gap-3">
+<a 
+id="floatingInsta"
+href="https://instagram.com/ali_moda20" 
+target="_blank" 
+rel="noopener noreferrer" 
+aria-label="Instagram"
+class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition"
+>
+<i data-lucide="instagram" class="w-6 h-6"></i>
+</a>
+<a 
+id="floatingWa"
+href="https://wa.me/9736668786?text=مرحباً%20ALI%20MODA" 
+target="_blank" 
+rel="noopener noreferrer" 
+aria-label="WhatsApp"
+class="w-13 h-13 p-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition"
+>
+<i data-lucide="message-circle" class="w-7 h-7"></i>
+</a>
+</div>
+<!-- AUTHENTICATION MODAL (971999) -->
+<div id="authModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+<div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-stone-200">
+<div class="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mx-auto mb-3 text-brand-gold-dark">
+<i data-lucide="shield-check" class="w-6 h-6"></i>
+</div>
+<h3 class="text-base font-bold text-stone-900 mb-1">تسجيل دخول صاحب المحل</h3>
+<p class="text-xs text-stone-500 mb-4">أدخل كود الحماية الخاص بك لتعديل الأسعار والديسكاونت والمعروضات</p>
+<form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+<div>
+<input 
+type="password" 
+id="adminPassInput" 
+required 
+placeholder="أدخل كود الحماية..." 
+class="w-full text-center tracking-widest text-xl font-mono py-2.5 px-3 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-gold focus:outline-none"
+>
+<div id="authErrorMsg" class="text-rose-600 text-xs mt-1.5 hidden font-bold">كود الحماية غير صحيح!</div>
+</div>
+<div class="flex gap-2">
+<button type="button" onclick="closeAuthModal()" class="w-1/2 py-2.5 border border-stone-300 rounded-xl text-xs font-semibold text-stone-600">
+إلغاء
+</button>
+<button type="submit" class="w-1/2 py-2.5 bg-stone-950 hover:bg-black text-white rounded-xl text-xs font-bold">
+دخول للوحة
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- CHANGE PASSCODE MODAL -->
+<div id="changePassModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+<div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl">
+<h3 class="text-base font-bold text-stone-900 mb-1">تعديل كود الحماية الخاص</h3>
+<p class="text-xs text-stone-500 mb-4">الكود الحالي الأساسي: 971999</p>
+<form onsubmit="handleChangePassSubmit(event)" class="space-y-3 text-right">
+<div>
+<label class="text-xs text-stone-600 font-bold">كود الإدارة الجديد:</label>
+<input type="password" id="inpNewPasscode" required minlength="4" class="w-full px-3 py-2 border rounded-xl text-center text-sm font-mono mt-1">
+</div>
+<div class="flex gap-2 mt-4">
+<button type="button" onclick="closeChangePassModal()" class="w-1/2 py-2 border rounded-xl text-xs font-semibold">إلغاء</button>
+<button type="submit" class="w-1/2 py-2 bg-stone-900 text-white rounded-xl text-xs font-bold">حفظ الكود</button>
+</div>
+</form>
+</div>
+</div>
+<!-- PRODUCT QUICK VIEW WITH SIZES & DIRECT WHATSAPP ORDER -->
+<div id="productDetailModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+<div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-stone-200 max-h-[92vh] flex flex-col md:flex-row relative">
+<button onclick="closeProductDetail()" class="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-white/90 text-stone-800 flex items-center justify-center hover:bg-white shadow">
+<i data-lucide="x" class="w-4 h-4"></i>
+</button>
+<div class="w-full md:w-1/2 bg-stone-100 flex flex-col justify-center items-center relative aspect-square md:aspect-auto">
+<img id="detailMainImg" src="" alt="Product" class="w-full h-full object-cover">
+<div id="detailThumbnails" class="absolute bottom-2.5 left-0 right-0 flex justify-center gap-1 px-2 overflow-x-auto"></div>
+</div>
+<div class="w-full md:w-1/2 p-5 sm:p-6 flex flex-col justify-between overflow-y-auto">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span id="detailBadge" class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-600 text-white"></span>
+<span id="detailStatus" class="text-[10px] text-emerald-600 font-bold"></span>
+</div>
+<h2 id="detailTitle" class="text-base sm:text-xl font-bold text-stone-900 mb-2 leading-snug"></h2>
+<!-- Price & Discount info -->
+<div class="flex items-baseline gap-2 mb-3">
+<span id="detailPrice" class="text-xl sm:text-2xl font-black text-stone-950 font-sans"></span>
+<span id="detailOldPrice" class="text-xs text-stone-400 line-through hidden font-sans"></span>
+<span id="detailDiscountBadge" class="text-[10px] font-bold bg-rose-100 text-rose-700 px-1.5 py-0.5 rounded hidden"></span>
+</div>
+<p id="detailDesc" class="text-xs text-stone-600 leading-relaxed mb-4"></p>
+<!-- Select Size (الزبون يختار مقاسه) -->
+<div class="mb-4">
+<div class="flex justify-between items-center mb-1.5">
+<span id="detailSelectSizeLabel" class="text-xs font-bold text-stone-800 block">اختر المقاس المطلوب (Size):</span>
+<span id="selectedSizeNotice" class="text-[11px] font-bold text-brand-gold-dark"></span>
+</div>
+<div id="detailSizesContainer" class="flex flex-wrap gap-1.5 font-mono"></div>
+</div>
+<div class="mb-4">
+<span id="detailColorsLabel" class="text-xs font-bold text-stone-800 block mb-1">الألوان المتاحة:</span>
+<div id="detailColors" class="flex flex-wrap gap-1 text-xs text-stone-600"></div>
+</div>
+</div>
+<div>
+<button 
+type="button"
+onclick="triggerWhatsAppOrderFromModal()"
+class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition">
+<i data-lucide="message-circle" class="w-4 h-4"></i>
+<span id="detailWaOrderBtnText">طلب القطعة عبر واتساب مع السعر والمقاس</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- JAVASCRIPT LOGIC -->
+<script>
+async function sha256(message) {
+const msgBuffer = new TextEncoder().encode(message);
+const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+const hashArray = Array.from(new Uint8Array(hashBuffer));
+return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+// SHA-256 hash للكود الافتراضي: 971999
+const INITIAL_PASSCODE_HASH = "2ccdbec278a2e5c843ce818c668b54e760c0f99a3c9be01ee19d28db4b8686d1";
+const KEYS = {
+PRODUCTS: 'alimoda_products_v5',
+CATEGORIES: 'alimoda_categories_v5',
+UPDATES: 'alimoda_updates_v5',
+SETTINGS: 'alimoda_settings_v5',
+PASS_HASH: 'alimoda_pass_hash_v5',
+SESSION: 'alimoda_admin_session_v5',
+LANG: 'alimoda_lang_v5'
+};
+// ترجمة اللغات الثلاث (العربية، الإنجليزية، الهندية)
+const translations = {
+ar: {
+allSections: "جميع الأقسام",
+allSubCats: "كل القطع",
+men: "رجال",
+women: "نساء",
+heels: "أكعب",
+kids: "أطفال",
+bags: "حقائب",
+accessories: "إكسسوارات",
+all: "الكل",
+offers: "الديسكاونت والعروض",
+new: "وصل حديثاً",
+bhd: "د.ب",
+before: "قبل:",
+after: "بعد الخصم:",
+discountOff: "خصم",
+waInquiry: "طلب بالسعر والمقاس",
+ownerPortal: "بوابة المالك",
+ownerActive: "لوحة التحكم (نشطة)",
+tickerDefault: "✨ ALI MODA general trading | كتالوج الأحذية، الكعب، الحقائب، تشكيلة الأطفال والإكسسوارات",
+announcements: "آخر الأخبار",
+mainSections: "الأقسام الرئيسية:",
+heroTitle: "كتالوج التميز والفخامة",
+heroSub: "اختر القسم، حدد مقاسك المفضل وتواصل معنا مباشرة عبر واتساب مع السعر والديسكاونت المعتمد.",
+browseBtn: "تصفح التصفية",
+emptyTitle: "لا توجد منتجات مطابقة لهذا القسم أو البحث",
+emptySub: "اختر قسماً آخر أو تفضل بالتواصل معنا عبر واتساب لمعرفة المتوفر في المحل.",
+selectSize: "اختر المقاس المطلوب (Size):",
+colorsAvail: "الألوان المتاحة:",
+modalWaBtn: "طلب الموديل بالسعر والمقاس المحدد عبر واتساب",
+chooseSizeFirst: "يرجى تحديد المقاس الذي تريده أولاً بالضغط عليه",
+copyright: "جميع الحقوق محفوظة | كتالوج إلكتروني رسمي"
+},
+en: {
+allSections: "All Sections",
+allSubCats: "All Items",
+men: "Men",
+women: "Women",
+heels: "Heels",
+kids: "Kids",
+bags: "Bags",
+accessories: "Accessories",
+all: "All",
+offers: "Discounts & Offers",
+new: "New Arrivals",
+bhd: "BHD",
+before: "Before:",
+after: "Now:",
+discountOff: "OFF",
+waInquiry: "Order with Size & Price",
+ownerPortal: "Owner Portal",
+ownerActive: "Admin Panel",
+tickerDefault: "✨ ALI MODA general trading | Footwear, Heels, Bags, Kids & Accessories Catalogue",
+announcements: "Latest News",
+mainSections: "Main Sections:",
+heroTitle: "Luxury & Elegance Catalogue",
+heroSub: "Choose category, select your size, and message us directly on WhatsApp with official price & discount.",
+browseBtn: "Browse Collection",
+emptyTitle: "No products found in this section or search",
+emptySub: "Please choose another section or contact us via WhatsApp to check in-store availability.",
+selectSize: "Choose Size:",
+colorsAvail: "Available Colors:",
+modalWaBtn: "Order this Item with Size & Price via WhatsApp",
+chooseSizeFirst: "Please click to select your size first",
+copyright: "All Rights Reserved | Official Online Catalogue"
+},
+hi: {
+allSections: "सभी विभाग",
+allSubCats: "सभी उत्पाद",
+men: "पुरुष (Men)",
+women: "महिलाएं (Women)",
+heels: "हील्स (Heels)",
+kids: "बच्चे (Kids)",
+bags: "बैग्स (Bags)",
+accessories: "एक्सेसरीज (Accessories)",
+all: "सभी",
+offers: "छूट और ऑफर (Discount)",
+new: "नया आगमन (New)",
+bhd: "BHD (दिनार)",
+before: "पहले:",
+after: "अब:",
+discountOff: "छूट",
+waInquiry: "साइज और कीमत के साथ ऑर्डर करें",
+ownerPortal: "मालिक पोर्टल (Admin)",
+ownerActive: "कंट्रोल पैनल (सक्रिय)",
+tickerDefault: "✨ ALI MODA general trading | जूते, हील्स, बैग्स, बच्चों के कलेक्शन और एक्सेसरीज कैटलॉग",
+announcements: "ताज़ा अपडेट",
+mainSections: "मुख्य विभाग:",
+heroTitle: "शानदार और प्रीमियम कैटलॉग",
+heroSub: "विभाग चुनें, अपना साइज चुनें और तय कीमत और डिस्काउंट के साथ व्हाट्सएप पर सीधे संपर्क करें।",
+browseBtn: "कैटलॉग देखें",
+emptyTitle: "इस श्रेणी में कोई उत्पाद नहीं मिला",
+emptySub: "कृपया कोई दूसरा अनुभाग चुनें या दुकान में उपलब्धता जानने के लिए व्हाट्सएप पर संपर्क करें।",
+selectSize: "अपना साइज चुनें (Size):",
+colorsAvail: "उपलब्ध रंग:",
+modalWaBtn: "व्हाट्सएप पर साइज और कीमत के साथ तुरंत ऑर्डर करें",
+chooseSizeFirst: "कृपया पहले अपना साइज चुनें",
+copyright: "सर्वाधिकार सुरक्षित | आधिकारिक कैटलॉग"
+}
+};
+// الأقسام الافتراضية الشاملة
+const DEFAULT_CATEGORIES = [
+// رجال (Men)
+{ id: 'cat-men-classic', nameAr: 'أحذية كلاسيك ورسمي', nameEn: "Men's Classic Shoes", nameHi: "पुरुषों के फॉर्मल जूते", gender: 'رجال' },
+{ id: 'cat-men-sneakers', nameAr: 'سنيكرز ورياضي رجالي', nameEn: "Men's Sneakers & Sport", nameHi: "पुरुषों के स्नीकर्स और स्पोर्ट्स", gender: 'رجال' },
+{ id: 'cat-men-slippers', nameAr: 'شباشب وصنادل شرقية', nameEn: "Men's Slippers & Sandals", nameHi: "पुरुषों की चप्पल और सैंडल", gender: 'رجال' },
+{ id: 'cat-men-acc', nameAr: 'إكسسوارات وأحزمة رجالية', nameEn: "Men's Belts & Wallets", nameHi: "पुरुषों के बेल्ट और पर्स", gender: 'رجال' },
+// نساء (Women)
+{ id: 'cat-women-casual', nameAr: 'أحذية مريحة وفلات نسائي', nameEn: "Women's Flats & Casual", nameHi: "महिलाओं के फ्लैट्स और आरामदायक जूते", gender: 'نساء' },
+{ id: 'cat-women-slippers', nameAr: 'شباشب وصنادل نسائية', nameEn: "Women's Slippers & Sandals", nameHi: "महिलाओं की चप्पलें", gender: 'نساء' },
+// أكعب (Heels)
+{ id: 'cat-heels-high', nameAr: 'كعب عالي وسهرة', nameEn: "High & Evening Heels", nameHi: "हाई हील्स और पार्टी वियर", gender: 'أكعب' },
+{ id: 'cat-heels-comfy', nameAr: 'كعب مريح ووسط', nameEn: "Comfort & Mid Heels", nameHi: "आरामदायक मीडियम हील्स", gender: 'أكعب' },
+// أطفال (Kids)
+{ id: 'cat-kids-boys', nameAr: 'أطفال ولادي ورياضي', nameEn: "Boys Shoes & Sneakers", nameHi: "लड़कों के जूते", gender: 'أطفال' },
+{ id: 'cat-kids-girls', nameAr: 'أطفال بناتي ومناسبات', nameEn: "Girls Party Shoes", nameHi: "लड़कियों के फैंसी जूते", gender: 'أطفال' },
+{ id: 'cat-kids-babies', nameAr: 'أحذية مواليد وصغار', nameEn: "Baby & Toddler Shoes", nameHi: "छोटे बच्चों के जूते", gender: 'أطفال' },
+// حقائب (Bags)
+{ id: 'cat-bags-hand', nameAr: 'حقائب يد وشنط نسائية', nameEn: "Handbags & Totes", nameHi: "हैंडबैग", gender: 'حقائب' },
+{ id: 'cat-bags-shoulder', nameAr: 'حقائب كتف ومناسبات', nameEn: "Shoulder & Crossbody Bags", nameHi: "शोल्डर और पार्टी बैग", gender: 'حقائب' },
+// إكسسوارات (Accessories)
+{ id: 'cat-acc-general', nameAr: 'عطور ومستلزمات العناية', nameEn: "Fragrances & Accessories", nameHi: "इत्र और एक्सेसरीज", gender: 'إكسسوارات' }
+];
+// المنتجات الافتراضية مع الديسكاونت والمقاسات
+const DEFAULT_PRODUCTS = [
+{
+id: 'prod-001',
+nameAr: 'حذاء كلاسيك أكسفورد إيطالي نخب أول',
+nameEn: 'Italian Classic Oxford Shoes',
+nameHi: 'इटैलियन क्लासिक ऑक्सफोर्ड जूते',
+categoryId: 'cat-men-classic',
+gender: 'رجال',
+price: 18.500,
+isOffer: true,
+offerPrice: 14.000, // خصم ديسكاونت
+sizes: ['40', '41', '42', '43', '44', '45', '46'],
+colors: ['أسود كلاسيك', 'بني داكن'],
+status: 'متوفر',
+isNew: true,
+descAr: 'حذاء رجالي فاخر مصنوع من جلد إيطالي طبيعي ببطانة طبية مريحة للمناسبات والدوام الرسمي.',
+images: ['https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80']
+},
+{
+id: 'prod-002',
+nameAr: 'نعال شرقي خليجي مطرز يدوي فاخر',
+nameEn: 'Handmade Arabian Slippers',
+nameHi: 'हाथ से बनी अरेबियन चप्पल',
+categoryId: 'cat-men-slippers',
+gender: 'رجال',
+price: 14.500,
+isOffer: true,
+offerPrice: 10.900,
+sizes: ['41', '42', '43', '44', '45', '46'],
+colors: ['بيج ملكي', 'كحلي داكن'],
+status: 'متوفر',
+isNew: true,
+descAr: 'تصميم شرقي مريح وخفيف الوزن بنعل طبي لراحة قصوى أثناء المشي.',
+images: ['https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80']
+},
+{
+id: 'prod-003',
+nameAr: 'سنيكرز رجالي فخم خفيف الوزن',
+nameEn: "Men's Luxury Light Sneakers",
+nameHi: 'पुरुषों के हल्के स्नीकर्स',
+categoryId: 'cat-men-sneakers',
+gender: 'رجال',
+price: 12.000,
+isOffer: false,
+offerPrice: null,
+sizes: ['40', '41', '42', '43', '44', '45'],
+colors: ['أبيض ناصع', 'رمادي'],
+status: 'متوفر',
+isNew: true,
+descAr: 'سنيكرز أنيق ومريح للمشي والرياضة والطلعات اليومية.',
+images: ['https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80']
+},
+{
+id: 'prod-004',
+nameAr: 'كعب سهرة راقي مرصع بالكريستال',
+nameEn: 'Luxury Evening Heels',
+nameHi: 'पार्टी वियर क्रिस्टल हील्स',
+categoryId: 'cat-heels-high',
+gender: 'أكعب',
+price: 16.000,
+isOffer: true,
+offerPrice: 12.500,
+sizes: ['36', '37', '38', '39', '40', '41'],
+colors: ['ذهبي شامبين', 'فضي براق'],
+status: 'متوفر',
+isNew: true,
+descAr: 'تصميم أنثوي جذاب مع مقاس كعب متوازن 8 سم لراحة مثالية في السهرات.',
+images: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80']
+},
+{
+id: 'prod-005',
+nameAr: 'حقيبة يد وكتف نسائية فاخرة بإبزيم ذهبي',
+nameEn: 'Luxury Leather Shoulder Bag',
+nameHi: 'महिलाओं का लेदर हैंडबैग',
+categoryId: 'cat-bags-hand',
+gender: 'حقائب',
+price: 15.000,
+isOffer: true,
+offerPrice: 11.500,
+sizes: ['Medium', 'Large', 'One Size'],
+colors: ['أسود ملكي', 'بيج عاجي'],
+status: 'متوفر',
+isNew: true,
+descAr: 'حقيبة راقية متينة بتقسيمات داخلية متعددة تناسب الطلعات والمناسبات.',
+images: ['https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80']
+},
+{
+id: 'prod-006',
+nameAr: 'حذاء أطفال ولادي مريح وسريع الارتداء',
+nameEn: 'Boys Comfy Sneakers',
+nameHi: 'लड़कों के जूते',
+categoryId: 'cat-kids-boys',
+gender: 'أطفال',
+price: 7.500,
+isOffer: false,
+offerPrice: null,
+sizes: ['24', '26', '28', '30', '32', '34'],
+colors: ['كحلي', 'أسود وأحمر'],
+status: 'متوفر',
+isNew: true,
+descAr: 'حذاء أطفال بنعل مانع للانزلاق وخامة مريحة للقدم طوال اليوم.',
+images: ['https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=800&q=80']
+}
+];
+const DEFAULT_UPDATES = [
+"🔥 عروض ديسكاونت كبرى في قسم الأحذية الرجالية والشباشب الشرقية!",
+"✨ تشكيلة كعب السهرة والحقائب الفاخرة متوفرة الآن بمقاسات وألوان متعددة.",
+"📦 التوصيل السريع متاح لجميع مناطق البحرين والخليج عبر الواتساب."
+];
+function setupDatabase() {
+if (!localStorage.getItem(KEYS.PRODUCTS)) localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(DEFAULT_PRODUCTS));
+if (!localStorage.getItem(KEYS.CATEGORIES)) localStorage.setItem(KEYS.CATEGORIES, JSON.stringify(DEFAULT_CATEGORIES));
+if (!localStorage.getItem(KEYS.UPDATES)) localStorage.setItem(KEYS.UPDATES, JSON.stringify(DEFAULT_UPDATES));
+if (!localStorage.getItem(KEYS.SETTINGS)) {
+localStorage.setItem(KEYS.SETTINGS, JSON.stringify({
+whatsapp: '6668786',
+instagram: 'ali_moda20'
+}));
+}
+if (!localStorage.getItem(KEYS.PASS_HASH)) localStorage.setItem(KEYS.PASS_HASH, INITIAL_PASSCODE_HASH);
+}
+const dbGetProducts = () => JSON.parse(localStorage.getItem(KEYS.PRODUCTS) || '[]');
+const dbGetCategories = () => JSON.parse(localStorage.getItem(KEYS.CATEGORIES) || '[]');
+const dbGetUpdates = () => JSON.parse(localStorage.getItem(KEYS.UPDATES) || '[]');
+const dbGetSettings = () => JSON.parse(localStorage.getItem(KEYS.SETTINGS) || '{}');
+const dbSetProducts = (data) => localStorage.setItem(KEYS.PRODUCTS, JSON.stringify(data));
+const dbSetCategories = (data) => localStorage.setItem(KEYS.CATEGORIES, JSON.stringify(data));
+const dbSetUpdates = (data) => localStorage.setItem(KEYS.UPDATES, JSON.stringify(data));
+const dbSetSettings = (data) => localStorage.setItem(KEYS.SETTINGS, JSON.stringify(data));
+let activeGender = 'all'; // all, رجال, نساء, أكعب, أطفال, حقائب, إكسسوارات
+let activeSubCategory = 'all';
+let activeQuickFilter = 'all';
+let searchQuery = '';
+let currentLang = localStorage.getItem(KEYS.LANG) || 'ar';
+let uploadedImagesBase64 = [];
+// المقاس والمنتج المحددان في النافذة المنبثقة
+let currentModalProduct = null;
+let currentModalSelectedSize = '';
+function isOwnerLoggedIn() {
+return !!sessionStorage.getItem(KEYS.SESSION);
+}
+// تبديل وتطبيق اللغة الفورية
+function changeLanguage(lang) {
+currentLang = lang;
+localStorage.setItem(KEYS.LANG, lang);
+// ضبط اتجاه الصفحة (العربية RTL، الإنجليزية والهندية LTR)
+const isRtl = (lang === 'ar');
+document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+document.documentElement.lang = lang;
+if (lang === 'hi') {
+document.documentElement.classList.add('lang-hi');
+} else {
+document.documentElement.classList.remove('lang-hi');
+}
+// ضبط ألوان أزرار اللغة
+['ar', 'en', 'hi'].forEach(l => {
+const btn = document.getElementById(⁠langBtn-${l}⁠);
+if (btn) {
+btn.className = (l === lang) ? "font-bold text-brand-gold bg-stone-800 px-1.5 py-0.5 rounded transition" : "hover:text-brand-gold px-1.5 py-0.5 text-stone-400 transition";
+}
+});
+// ترجمة نصوص الواجهة
+const t = translations[lang];
+document.getElementById('heroTitle').innerText = t.heroTitle;
+document.getElementById('heroSubtitle').innerText = t.heroSub;
+document.getElementById('heroBrowseBtn').innerText = t.browseBtn;
+document.getElementById('announcementBadge').innerText = t.announcements;
+document.getElementById('mainSectionsLabel').innerText = t.mainSections;
+document.getElementById('qfOffersLabel').innerText = t.offers;
+document.getElementById('qfNewLabel').innerText = t.new;
+document.getElementById('emptyTitle').innerText = t.emptyTitle;
+document.getElementById('emptySub').innerText = t.emptySub;
+document.getElementById('detailSelectSizeLabel').innerText = t.selectSize;
+document.getElementById('detailColorsLabel').innerText = t.colorsAvail;
+document.getElementById('detailWaOrderBtnText').innerText = t.modalWaBtn;
+document.getElementById('copyrightNotice').innerText = t.copyright;
+renderMainGenderTabs();
+renderSubCategoryTabs();
+renderCatalogGrid();
+updateAdminButton();
+renderTicker();
+}
+function showCatalogView() {
+document.getElementById('viewAdmin').classList.add('hidden');
+document.getElementById('viewCatalog').classList.remove('hidden');
+renderCatalogGrid();
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showAdminView() {
+if (!isOwnerLoggedIn()) {
+openAuthModal();
+return;
+}
+document.getElementById('viewCatalog').classList.add('hidden');
+document.getElementById('viewAdmin').classList.remove('hidden');
+refreshAdminView();
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function handleAdminEntry() {
+if (isOwnerLoggedIn()) {
+showAdminView();
+} else {
+openAuthModal();
+}
+}
+function updateAdminButton() {
+const btn = document.getElementById('adminSwitchBtn');
+const label = document.getElementById('adminBtnLabel');
+const t = translations[currentLang];
+if (isOwnerLoggedIn()) {
+btn.classList.remove('bg-stone-900', 'text-white', 'border-stone-900');
+btn.classList.add('bg-brand-gold', 'text-stone-950', 'border-brand-gold');
+label.innerText = t.ownerActive;
+} else {
+btn.classList.add('bg-stone-900', 'text-white', 'border-stone-900');
+btn.classList.remove('bg-brand-gold', 'text-stone-950', 'border-brand-gold');
+label.innerText = t.ownerPortal;
+}
+}
+// بناء شريط الأقسام الرئيسية (رجال، نساء، أكعب، أطفال، حقائب، إكسسوارات)
+function renderMainGenderTabs() {
+const container = document.getElementById('mainGenderTabs');
+const t = translations[currentLang];
+const sections = [
+{ id: 'all', label: t.allSections, icon: 'layers' },
+{ id: 'رجال', label: t.men, icon: 'user' },
+{ id: 'نساء', label: t.women, icon: 'sparkle' },
+{ id: 'أكعب', label: t.heels, icon: 'sparkles' },
+{ id: 'أطفال', label: t.kids, icon: 'smile' },
+{ id: 'حقائب', label: t.bags, icon: 'shopping-bag' },
+{ id: 'إكسسوارات', label: t.accessories, icon: 'watch' }
+];
+container.innerHTML = sections.map(sec => {
+const isCurrent = activeGender === sec.id;
+return ⁠<button  onclick="selectMainGender('${sec.id}')"  class="px-4 py-2 rounded-2xl text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 ${isCurrent ? 'bg-stone-950 text-white shadow-md' : 'bg-white border border-stone-200 text-stone-700 hover:border-brand-gold'}"> <span>${sec.label}</span> </button>⁠;
+}).join('');
+}
+function selectMainGender(gender) {
+activeGender = gender;
+activeSubCategory = 'all'; // إعادة ضبط التصنيف الفرعي
+renderMainGenderTabs();
+renderSubCategoryTabs();
+renderCatalogGrid();
+}
+// بناء التصنيفات الفرعية حسب القسم الرئيسي المختار
+function renderSubCategoryTabs() {
+const container = document.getElementById('catalogSubCategoryTabs');
+const t = translations[currentLang];
+const categories = dbGetCategories();
+// تصفية الأقسام الفرعية التابعة للقسم الرئيسي الحالي
+let relevantCats = categories;
+if (activeGender !== 'all') {
+relevantCats = categories.filter(c => c.gender === activeGender);
+}
+let html = ⁠<button  onclick="filterSubCategory('all')"  class="px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${activeSubCategory === 'all' ? 'bg-stone-800 text-white' : 'bg-white border border-stone-200 text-stone-600 hover:border-brand-gold'}"> ${t.allSubCats} </button>⁠;
+relevantCats.forEach(cat => {
+let name = cat.nameAr;
+if (currentLang === 'en' && cat.nameEn) name = cat.nameEn;
+if (currentLang === 'hi' && cat.nameHi) name = cat.nameHi;
+const isCurrent = (activeSubCategory === cat.id);
+html += ⁠<button  onclick="filterSubCategory('${cat.id}')"  class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${isCurrent ? 'bg-stone-800 text-white' : 'bg-white border border-stone-200 text-stone-600 hover:border-brand-gold'}"> ${name} </button>⁠;
+});
+container.innerHTML = html;
+}
+function filterSubCategory(subId) {
+activeSubCategory = subId;
+renderSubCategoryTabs();
+renderCatalogGrid();
+}
+function setQuickFilter(type) {
+activeQuickFilter = type;
+document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+btn.classList.remove('bg-stone-900', 'text-white', 'font-bold');
+btn.classList.add('bg-white', 'text-stone-700', 'font-medium');
+});
+const activeBtn = document.getElementById(⁠qf-${type}⁠);
+if (activeBtn) {
+activeBtn.classList.add('bg-stone-900', 'text-white', 'font-bold');
+activeBtn.classList.remove('bg-white', 'text-stone-700');
+}
+renderCatalogGrid();
+}
+function handleSearch(val) {
+searchQuery = val.trim().toLowerCase();
+document.getElementById('desktopSearchInput').value = val;
+document.getElementById('mobileSearchInput').value = val;
+renderCatalogGrid();
+}
+// عرض شبكة المنتجات مع حساب الديسكاونت والمقاسات
+function renderCatalogGrid() {
+const grid = document.getElementById('productsGrid');
+const emptyBox = document.getElementById('emptyCatalogState');
+const products = dbGetProducts();
+const settings = dbGetSettings();
+const waPhone = settings.whatsapp || '6668786';
+const t = translations[currentLang];
+const bhd = t.bhd;
+let list = products.filter(item => {
+// فلتر القسم الرئيسي (مثلاً الرجالي)
+if (activeGender !== 'all') {
+if (item.gender && item.gender !== activeGender) return false;
+}
+// فلتر التصنيف الفرعي
+if (activeSubCategory !== 'all' && item.categoryId !== activeSubCategory) return false;
+// فلاتر العروض والجديد
+if (activeQuickFilter === 'offers' && !item.isOffer) return false;
+if (activeQuickFilter === 'new' && !item.isNew) return false;
+// بحث الكلمات
+if (searchQuery) {
+const combined = ⁠${item.nameAr} ${item.nameEn || ''} ${item.nameHi || ''} ${(item.sizes || []).join(' ')} ${(item.colors || []).join(' ')}⁠.toLowerCase();
+if (!combined.includes(searchQuery)) return false;
+}
+return true;
+});
+if (list.length === 0) {
+grid.innerHTML = '';
+emptyBox.classList.remove('hidden');
+return;
+}
+emptyBox.classList.add('hidden');
+grid.innerHTML = list.map(prod => {
+let title = prod.nameAr;
+if (currentLang === 'en' && prod.nameEn) title = prod.nameEn;
+if (currentLang === 'hi' && prod.nameHi) title = prod.nameHi;
+const mainImg = (prod.images && prod.images.length > 0) ? prod.images[0] : 'https://placehold.co/600x700?text=ALI+MODA';
+const finalPrice = prod.isOffer && prod.offerPrice ? prod.offerPrice : prod.price;
+// حساب نسبة الخصم
+let discountPercent = 0;
+if (prod.isOffer && prod.offerPrice && prod.price > prod.offerPrice) {
+discountPercent = Math.round(((prod.price - prod.offerPrice) / prod.price) * 100);
+}
+// المقاس الافتراضي الأول لتضمينه في الرابط السريع
+const defaultSize = (prod.sizes && prod.sizes.length > 0) ? prod.sizes[0] : 'Standard';
+return `
+<div class="group bg-white rounded-2xl overflow-hidden border border-stone-200/80 hover:border-brand-gold/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-stone-100 cursor-pointer" onclick="openProductDetail('${prod.id}')">
+<img 
+src="${mainImg}" 
+alt="${title}" 
+loading="lazy" 
+class="img-zoom w-full h-full object-cover object-center"
+/>
+<div class="absolute top-2.5 right-2.5 flex flex-col gap-1 z-10 pointer-events-none">
+{prod.isOffer ? `
+<span class="bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+${discountPercent > 0 ? `-{discountPercent}%⁠: ''} ${t.offers} </span>⁠ : ''}
+${prod.isNew ? ⁠<span class="bg-stone-900 text-white text-[10px] font-medium px-2 py-0.5 rounded shadow-sm"> ${t.new} </span>⁠ : ''}
+</div>
+</div>
+<div class="p-3 sm:p-4 text-right" dir="${currentLang === 'ar' ? 'rtl' : 'ltr'}">
+<div class="flex items-center justify-between text-[10px] text-stone-400 font-semibold mb-1">
+<span>{prod.status}</span>
+<span class="text-brand-gold-dark font-bold font-sans">{prod.gender || ''}</span>
+</div>
+<h3 
+onclick="openProductDetail('${prod.id}')" 
+class="font-bold text-stone-900 text-xs sm:text-sm line-clamp-2 cursor-pointer hover:text-brand-gold transition leading-snug">
+${title}
+</h3>
+<!-- الأسعار قبل وبعد الديسكاونت -->
+<div class="mt-2.5 flex items-baseline gap-2">
+<span class="text-sm sm:text-base font-black text-stone-950 font-sans">
+{finalPrice.toFixed(3)} <span class="text-xs font-bold text-brand-gold-dark">{bhd}</span>
+</span>
+${prod.isOffer && prod.offerPrice ? ⁠<span class="text-xs text-stone-400 line-through font-sans"> ${prod.price.toFixed(3)} </span>⁠ : ''}
+</div>
+<!-- المقاسات المتوفرة -->
+<div class="mt-2.5 flex flex-wrap gap-1">
+${(prod.sizes || []).slice(0, 5).map(s => ⁠<span class="text-[9px] bg-stone-100 text-stone-700 px-1.5 py-0.5 rounded border border-stone-200/80 font-mono">${s}</span>⁠).join('')}
+</div>
+</div>
+</div>
+<div class="p-3 sm:p-4 pt-0">
+<button 
+type="button"
+onclick="openProductDetail('${prod.id}')" 
+class="w-full py-2 px-3 rounded-xl bg-stone-950 hover:bg-emerald-600 text-white text-xs font-semibold transition duration-200 flex items-center justify-center gap-1.5 shadow-sm">
+<i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+<span>${t.waInquiry}</span>
+</button>
+</div>
+</div>
+`;
+}).join('');
+lucide.createIcons();
+}
+// فتح نافذة المنتج وتحديد المقاس والطلب المباشر
+function openProductDetail(id) {
+const prod = dbGetProducts().find(p => p.id === id);
+if (!prod) return;
+currentModalProduct = prod;
+currentModalSelectedSize = (prod.sizes && prod.sizes.length > 0) ? prod.sizes[0] : '';
+const modal = document.getElementById('productDetailModal');
+const t = translations[currentLang];
+const bhd = t.bhd;
+const currentPrice = prod.isOffer && prod.offerPrice ? prod.offerPrice : prod.price;
+let title = prod.nameAr;
+if (currentLang === 'en' && prod.nameEn) title = prod.nameEn;
+if (currentLang === 'hi' && prod.nameHi) title = prod.nameHi;
+document.getElementById('detailTitle').innerText = title;
+document.getElementById('detailDesc').innerText = prod.descAr || 'منتج أصلي مميز ومصنوع بجودة عالية لراحة وأناقة تامة.';
+document.getElementById('detailPrice').innerHTML = ⁠${currentPrice.toFixed(3)} <span class="text-sm font-normal text-brand-gold-dark">${bhd}</span>⁠;
+const oldPr = document.getElementById('detailOldPrice');
+const discBadge = document.getElementById('detailDiscountBadge');
+if (prod.isOffer && prod.offerPrice && prod.price > prod.offerPrice) {
+oldPr.innerText = ⁠${t.before} ${prod.price.toFixed(3)} ${bhd}⁠;
+oldPr.classList.remove('hidden');
+const percent = Math.round(((prod.price - prod.offerPrice) / prod.price) * 100);
+discBadge.innerText = ⁠${percent}% ${t.discountOff}⁠;
+discBadge.classList.remove('hidden');
+} else {
+oldPr.classList.add('hidden');
+discBadge.classList.add('hidden');
+}
+document.getElementById('detailStatus').innerText = ⁠● ${prod.status}⁠;
+document.getElementById('detailBadge').innerText = prod.isOffer ? t.offers : (prod.isNew ? t.new : 'Selected');
+const images = (prod.images && prod.images.length > 0) ? prod.images : ['https://placehold.co/600x700?text=ALI+MODA'];
+const mainImg = document.getElementById('detailMainImg');
+mainImg.src = images[0];
+document.getElementById('detailThumbnails').innerHTML = images.map(img => ⁠<img  src="${img}"  onclick="document.getElementById('detailMainImg').src='${img}'"  class="w-10 h-10 object-cover rounded-lg border-2 border-white cursor-pointer shadow hover:scale-105 transition" />⁠).join('');
+// عرض أزرار المقاسات مع إمكانية النقر لاختيار مقاس الزبون
+renderModalSizesButtons();
+document.getElementById('detailColors').innerHTML = (prod.colors || []).map(c => ⁠<span class="px-2 py-0.5 bg-stone-50 rounded text-xs border border-stone-200">${c}</span>⁠).join('') || '<span class="text-xs text-stone-400">حسب المعروض</span>';
+modal.classList.remove('hidden');
+lucide.createIcons();
+}
+function renderModalSizesButtons() {
+const container = document.getElementById('detailSizesContainer');
+const notice = document.getElementById('selectedSizeNotice');
+const prod = currentModalProduct;
+if (!prod) return;
+const sizes = prod.sizes || [];
+if (sizes.length === 0) {
+container.innerHTML = '<span class="text-xs text-stone-400">مقاس موحد (One Size)</span>';
+notice.innerText = 'One Size';
+currentModalSelectedSize = 'One Size';
+return;
+}
+notice.innerText = currentModalSelectedSize ? ⁠المقاس المختار: ${currentModalSelectedSize}⁠ : '';
+container.innerHTML = sizes.map(s => {
+const isSelected = (s === currentModalSelectedSize);
+return ⁠<button  type="button"  onclick="selectModalSize('${s}')"  class="px-3 py-1.5 rounded-xl text-xs font-bold font-mono transition border ${isSelected ? 'bg-stone-900 text-white border-stone-900 shadow-sm scale-105' : 'bg-stone-100 text-stone-700 border-stone-200 hover:border-black'}"> ${s} </button>⁠;
+}).join('');
+}
+function selectModalSize(s) {
+currentModalSelectedSize = s;
+renderModalSizesButtons();
+}
+// إرسال الطلب لواتساب بالمقاس والسعر المكتوب تلقائياً
+function triggerWhatsAppOrderFromModal() {
+if (!currentModalProduct) return;
+const prod = currentModalProduct;
+const settings = dbGetSettings();
+const phone = settings.whatsapp || '6668786';
+const t = translations[currentLang];
+const bhd = t.bhd;
+const finalPrice = prod.isOffer && prod.offerPrice ? prod.offerPrice : prod.price;
+if (!currentModalSelectedSize) {
+alert(t.chooseSizeFirst);
+return;
+}
+let message = ⁠مرحباً ALI MODA general trading، أود طلب الموديل التالي من الكتالوج:\n⁠;
+message += ⁠• المنتج: ${prod.nameAr}\n⁠;
+message += ⁠• القسم: ${prod.gender || 'عام'}\n⁠;
+message += ⁠• المقاس المطلوب: ${currentModalSelectedSize}\n⁠;
+message += ⁠• السعر المعتمد: ${finalPrice.toFixed(3)} ${bhd}\n⁠;
+if (prod.isOffer && prod.offerPrice) {
+message += ⁠• (مشمول بخصم وعرض خاص!)\n⁠;
+}
+message += ⁠\nيرجى تأكيد التوفر وطريقة الاستلام/التوصيل.⁠;
+const url = ⁠https://wa.me/973${phone}?text=${encodeURIComponent(message)}⁠;
+window.open(url, '_blank');
+}
+function closeProductDetail() {
+document.getElementById('productDetailModal').classList.add('hidden');
+}
+// إدارة الحماية وكلمة المرور (971999)
+function openAuthModal() {
+document.getElementById('adminPassInput').value = '';
+document.getElementById('authErrorMsg').classList.add('hidden');
+document.getElementById('authModal').classList.remove('hidden');
+}
+function closeAuthModal() {
+document.getElementById('authModal').classList.add('hidden');
+}
+async function handleLoginSubmit(e) {
+e.preventDefault();
+const code = document.getElementById('adminPassInput').value.trim();
+const hashed = await sha256(code);
+const storedHash = localStorage.getItem(KEYS.PASS_HASH) || INITIAL_PASSCODE_HASH;
+if (hashed === storedHash) {
+sessionStorage.setItem(KEYS.SESSION, 'alimoda_auth_' + Date.now());
+closeAuthModal();
+updateAdminButton();
+showAdminView();
+} else {
+document.getElementById('authErrorMsg').classList.remove('hidden');
+}
+}
+function adminLogout() {
+sessionStorage.removeItem(KEYS.SESSION);
+updateAdminButton();
+showCatalogView();
+}
+function openChangePasscodeModal() {
+document.getElementById('inpNewPasscode').value = '';
+document.getElementById('changePassModal').classList.remove('hidden');
+}
+function closeChangePassModal() {
+document.getElementById('changePassModal').classList.add('hidden');
+}
+async function handleChangePassSubmit(e) {
+e.preventDefault();
+if (!isOwnerLoggedIn()) return;
+const newCode = document.getElementById('inpNewPasscode').value.trim();
+if (newCode.length < 4) {
+alert('يرجى كتابة كود لا يقل عن 4 أرقام أو حروف');
+return;
+}
+const newHash = await sha256(newCode);
+localStorage.setItem(KEYS.PASS_HASH, newHash);
+closeChangePassModal();
+alert('تم تحديث كود الحماية بنجاح! احفظ الكود الجديد بعناية.');
+}
+function switchAdminTab(tab) {
+document.querySelectorAll('.adm-tab-btn').forEach(b => {
+b.className = "adm-tab-btn px-4 py-2 rounded-xl font-semibold text-stone-600 hover:bg-stone-200 flex items-center gap-1";
+});
+document.querySelectorAll('.adm-tab-content').forEach(c => c.classList.add('hidden'));
+const activeB = document.getElementById(⁠admTabBtn-${tab}⁠);
+const activeC = document.getElementById(⁠admTab-${tab}⁠);
+if (activeB) activeB.className = "adm-tab-btn px-4 py-2 rounded-xl font-bold bg-stone-900 text-white shadow flex items-center gap-1";
+if (activeC) activeC.classList.remove('hidden');
+if (tab === 'products') renderAdminTable();
+if (tab === 'categories') renderAdminCategoriesList();
+if (tab === 'updates') renderAdminUpdatesList();
+if (tab === 'settings') loadSettingsToForm();
+}
+function refreshAdminView() {
+populateCategoryDropdown();
+renderAdminTable();
+switchAdminTab('products');
+}
+function populateCategoryDropdown() {
+const select = document.getElementById('inpCategory');
+const cats = dbGetCategories();
+select.innerHTML = '<option value="">اختر القسم والتصنيف...</option>' + cats.map(c => ⁠<option value="${c.id}" data-gender="${c.gender}">[${c.gender}] ${c.nameAr}</option>⁠).join('');
+}
+function renderAdminTable() {
+const tbody = document.getElementById('adminProductsTbody');
+const products = dbGetProducts();
+const categories = dbGetCategories();
+const catMap = Object.fromEntries(categories.map(c => [c.id, ⁠${c.nameAr} (${c.gender})⁠]));
+document.getElementById('admProductsCount').innerText = products.length;
+if (products.length === 0) {
+tbody.innerHTML = ⁠<tr><td colspan="7" class="p-8 text-center text-stone-400">لا توجد منتجات مسجلة. أضف أول قطعة الآن!</td></tr>⁠;
+return;
+}
+tbody.innerHTML = products.map(prod => {
+const thumb = (prod.images && prod.images.length > 0) ? prod.images[0] : 'https://placehold.co/100x100?text=No+Img';
+return ⁠<tr class="hover:bg-stone-50 transition"> <td class="p-3 flex items-center gap-3"> <img src="${thumb}" class="w-12 h-14 object-cover rounded-xl border border-stone-200 flex-shrink-0"> <div> <span class="font-bold text-stone-900 text-xs block">${prod.nameAr}</span> <span class="text-[10px] text-stone-400">${prod.gender || ''}</span> </div> </td> <td class="p-3 text-stone-600 text-xs">${catMap[prod.categoryId] || 'عام'}</td> <td class="p-3 font-bold text-stone-900 text-xs">${prod.price.toFixed(3)} د.ب</td> <td class="p-3 text-xs"> ${prod.isOffer && prod.offerPrice ?⁠
+<span class="font-bold text-rose-600">${prod.offerPrice.toFixed(3)} د.ب</span>
+<span class="text-[9px] bg-rose-100 text-rose-700 px-1 py-0.2 rounded font-bold mr-1">ديسكاونت</span>
+⁠: '<span class="text-stone-400">بدون خصم</span>'} </td> <td class="p-3 text-stone-600 font-mono text-[11px]">${(prod.sizes || []).join(', ')}</td> <td class="p-3"> <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-100 text-emerald-800 font-bold">${prod.status}</span> </td> <td class="p-3 text-center"> <div class="flex items-center justify-center gap-1"> <button onclick="editProduct('${prod.id}')" class="p-1.5 hover:bg-stone-200 rounded-lg text-stone-700" title="تعديل"> <i data-lucide="edit" class="w-4 h-4"></i> </button> <button onclick="deleteProduct('${prod.id}')" class="p-1.5 hover:bg-rose-100 rounded-lg text-rose-600" title="حذف"> <i data-lucide="trash-2" class="w-4 h-4"></i> </button> </div> </td> </tr>⁠;
+}).join('');
+lucide.createIcons();
+}
+function toggleDiscountFields(enabled) {
+const offerInput = document.getElementById('inpOfferPrice');
+offerInput.disabled = !enabled;
+if (enabled) {
+offerInput.classList.remove('bg-stone-100', 'disabled:opacity-50');
+offerInput.focus();
+} else {
+offerInput.classList.add('bg-stone-100', 'disabled:opacity-50');
+offerInput.value = '';
+}
+}
+function appendQuickSize(val) {
+const inp = document.getElementById('inpSizes');
+let current = inp.value.split(',').map(s => s.trim()).filter(Boolean);
+if (!current.includes(val)) {
+current.push(val);
+inp.value = current.join(', ');
+}
+}
+function clearSizesInput() {
+document.getElementById('inpSizes').value = '';
+}
+function handleSelectedImages(e) {
+const files = e.target.files;
+if (!files || files.length === 0) return;
+Array.from(files).forEach(file => {
+if (!file.type.startsWith('image/')) return;
+const reader = new FileReader();
+reader.onload = function(evt) {
+compressImage(evt.target.result, 1200, 0.82, function(compressed) {
+uploadedImagesBase64.push(compressed);
+renderUploadedPreviews();
+});
+};
+reader.readAsDataURL(file);
+});
+}
+function compressImage(base64, maxWidth, quality, callback) {
+const img = new Image();
+img.src = base64;
+img.onload = function() {
+const canvas = document.createElement('canvas');
+let width = img.width;
+let height = img.height;
+if (width > maxWidth) {
+height = Math.round((height * maxWidth) / width);
+width = maxWidth;
+}
+canvas.width = width;
+canvas.height = height;
+const ctx = canvas.getContext('2d');
+ctx.drawImage(img, 0, 0, width, height);
+callback(canvas.toDataURL('image/jpeg', quality));
+};
+}
+function renderUploadedPreviews() {
+const wrap = document.getElementById('imagePreviewContainer');
+wrap.innerHTML = uploadedImagesBase64.map((img, i) => ⁠<div class="relative w-14 h-16 rounded-xl overflow-hidden border shadow-sm"> <img src="${img}" class="w-full h-full object-cover"> <button type="button" onclick="removeUploadedImg(${i})" class="absolute top-1 right-1 bg-rose-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px]">×</button> </div>⁠).join('');
+}
+function removeUploadedImg(index) {
+uploadedImagesBase64.splice(index, 1);
+renderUploadedPreviews();
+}
+function openNewProductForm() {
+cancelProductEdit();
+switchAdminTab('form');
+}
+function handleProductFormSubmit(e) {
+e.preventDefault();
+if (!isOwnerLoggedIn()) return;
+const editId = document.getElementById('editingProductId').value;
+const products = dbGetProducts();
+const categories = dbGetCategories();
+const nameAr = document.getElementById('inpNameAr').value.trim();
+const nameEn = document.getElementById('inpNameEn').value.trim();
+const nameHi = document.getElementById('inpNameHi').value.trim();
+const categoryId = document.getElementById('inpCategory').value;
+const price = parseFloat(document.getElementById('inpPrice').value);
+const isOffer = document.getElementById('inpIsOffer').checked;
+const offerPrice = isOffer ? parseFloat(document.getElementById('inpOfferPrice').value) : null;
+const sizes = document.getElementById('inpSizes').value.split(',').map(s => s.trim()).filter(Boolean);
+const colors = document.getElementById('inpColors').value.split(',').map(c => c.trim()).filter(Boolean);
+const status = document.getElementById('inpStatus').value;
+const descAr = document.getElementById('inpDescAr').value.trim();
+// تحديد القسم الرئيسي (Gender) تلقائياً من القسم المختار
+const matchedCat = categories.find(c => c.id === categoryId);
+const gender = matchedCat ? matchedCat.gender : 'رجال';
+if (uploadedImagesBase64.length === 0 && !editId) {
+alert('يرجى التقاط أو رفع صورة واحدة على الأقل للمنتج.');
+return;
+}
+if (editId) {
+const index = products.findIndex(p => p.id === editId);
+if (index !== -1) {
+products[index] = {
+...products[index],
+nameAr, nameEn, nameHi,
+categoryId, gender, price, isOffer, offerPrice,
+sizes, colors, status, descAr,
+images: uploadedImagesBase64.length > 0 ? uploadedImagesBase64 : products[index].images
+};
+}
+} else {
+const newProduct = {
+id: 'prod_' + Date.now(),
+nameAr, nameEn, nameHi,
+categoryId, gender, price, isOffer, offerPrice,
+sizes, colors, status, descAr,
+isNew: true,
+images: uploadedImagesBase64
+};
+products.unshift(newProduct);
+}
+dbSetProducts(products);
+cancelProductEdit();
+switchAdminTab('products');
+renderCatalogGrid();
+alert('تم حفظ ونشر الموديل مع السعر والديسكاونت بنجاح!');
+}
+function editProduct(id) {
+const prod = dbGetProducts().find(p => p.id === id);
+if (!prod) return;
+document.getElementById('editingProductId').value = prod.id;
+document.getElementById('formTitle').innerText = 'تعديل القطعة: ' + prod.nameAr;
+document.getElementById('inpNameAr').value = prod.nameAr || '';
+document.getElementById('inpNameEn').value = prod.nameEn || '';
+document.getElementById('inpNameHi').value = prod.nameHi || '';
+document.getElementById('inpCategory').value = prod.categoryId || '';
+document.getElementById('inpPrice').value = prod.price || '';
+const isOffer = !!prod.isOffer;
+document.getElementById('inpIsOffer').checked = isOffer;
+toggleDiscountFields(isOffer);
+document.getElementById('inpOfferPrice').value = prod.offerPrice || '';
+document.getElementById('inpSizes').value = (prod.sizes || []).join(', ');
+document.getElementById('inpColors').value = (prod.colors || []).join(', ');
+document.getElementById('inpStatus').value = prod.status || 'متوفر';
+document.getElementById('inpDescAr').value = prod.descAr || '';
+uploadedImagesBase64 = [...(prod.images || [])];
+renderUploadedPreviews();
+switchAdminTab('form');
+}
+function cancelProductEdit() {
+document.getElementById('editingProductId').value = '';
+document.getElementById('productForm').reset();
+document.getElementById('formTitle').innerText = 'إضافة قطعة جديدة للكتالوج';
+uploadedImagesBase64 = [];
+renderUploadedPreviews();
+toggleDiscountFields(false);
+}
+function deleteProduct(id) {
+if (!isOwnerLoggedIn()) return;
+if (!confirm('هل تريد حذف هذا الموديل نهائياً من الكتالوج؟')) return;
+let products = dbGetProducts().filter(p => p.id !== id);
+dbSetProducts(products);
+renderAdminTable();
+renderCatalogGrid();
+}
+function renderAdminCategoriesList() {
+const list = document.getElementById('admCategoriesList');
+const cats = dbGetCategories();
+list.innerHTML = cats.map(c => ⁠<div class="flex items-center justify-between p-2.5 rounded-xl border bg-stone-50"> <div> <span class="font-bold text-stone-900">${c.nameAr}</span> <span class="px-1.5 py-0.5 rounded bg-stone-200 text-stone-700 text-[10px] mr-1.5 font-bold">${c.gender}</span> </div> <button onclick="deleteCategory('${c.id}')" class="text-rose-600 hover:text-rose-800 p-1" title="حذف القسم"> <i data-lucide="trash-2" class="w-4 h-4"></i> </button> </div>⁠).join('');
+lucide.createIcons();
+}
+function handleCategoryAdd(e) {
+e.preventDefault();
+if (!isOwnerLoggedIn()) return;
+const nameAr = document.getElementById('catInpNameAr').value.trim();
+const nameEn = document.getElementById('catInpNameEn').value.trim();
+const nameHi = document.getElementById('catInpNameHi').value.trim();
+const gender = document.getElementById('catInpGender').value;
+const cats = dbGetCategories();
+cats.push({
+id: 'cat_' + Date.now(),
+nameAr, nameEn, nameHi, gender
+});
+dbSetCategories(cats);
+e.target.reset();
+renderAdminCategoriesList();
+populateCategoryDropdown();
+renderSubCategoryTabs();
+alert('تمت إضافة القسم بنجاح!');
+}
+function deleteCategory(id) {
+if (!isOwnerLoggedIn()) return;
+if (!confirm('هل أنت متأكد من حذف هذا القسم؟')) return;
+let cats = dbGetCategories().filter(c => c.id !== id);
+dbSetCategories(cats);
+renderAdminCategoriesList();
+populateCategoryDropdown();
+renderSubCategoryTabs();
+}
+function restoreDefaultCategories() {
+if (!isOwnerLoggedIn()) return;
+if (!confirm('استعادة الأقسام الشاملة (رجال، نساء، أطفال، حقائب، أكعب، إكسسوارات)؟')) return;
+dbSetCategories(DEFAULT_CATEGORIES);
+renderAdminCategoriesList();
+populateCategoryDropdown();
+renderSubCategoryTabs();
+}
+function renderTicker() {
+const updates = dbGetUpdates();
+const box = document.getElementById('storeUpdatesTicker');
+const t = translations[currentLang];
+if (updates.length === 0) {
+box.innerText = t.tickerDefault;
+return;
+}
+box.innerText = updates.join('  •  ');
+}
+function renderAdminUpdatesList() {
+const wrap = document.getElementById('admUpdatesList');
+const updates = dbGetUpdates();
+wrap.innerHTML = updates.map((u, i) => ⁠<div class="flex items-center justify-between p-2 rounded-xl bg-stone-50 border"> <span class="text-stone-800 text-xs">${u}</span> <button onclick="deleteUpdateItem(${i})" class="text-rose-600 p-1 hover:bg-rose-50 rounded"> <i data-lucide="trash-2" class="w-4 h-4"></i> </button> </div>⁠).join('');
+lucide.createIcons();
+}
+function handleUpdateAdd(e) {
+e.preventDefault();
+if (!isOwnerLoggedIn()) return;
+const val = document.getElementById('inpUpdateText').value.trim();
+const updates = dbGetUpdates();
+updates.unshift(val);
+dbSetUpdates(updates);
+e.target.reset();
+renderAdminUpdatesList();
+renderTicker();
+}
+function deleteUpdateItem(index) {
+if (!isOwnerLoggedIn()) return;
+const updates = dbGetUpdates();
+updates.splice(index, 1);
+dbSetUpdates(updates);
+renderAdminUpdatesList();
+renderTicker();
+}
+function loadSettingsToForm() {
+const s = dbGetSettings();
+document.getElementById('inpSettingWa').value = s.whatsapp || '6668786';
+document.getElementById('inpSettingInsta').value = s.instagram || 'ali_moda20';
+}
+function handleSettingsSave(e) {
+e.preventDefault();
+if (!isOwnerLoggedIn()) return;
+const whatsapp = document.getElementById('inpSettingWa').value.trim();
+const instagram = document.getElementById('inpSettingInsta').value.trim();
+dbSetSettings({ whatsapp, instagram });
+applyContactLinks();
+alert('تم حفظ أرقام التواصل بنجاح!');
+}
+function applyContactLinks() {
+const s = dbGetSettings();
+const wa = s.whatsapp || '6668786';
+const insta = s.instagram || 'ali_moda20';
+const waLink = ⁠https://wa.me/973${wa}⁠;
+const instaLink = ⁠https://instagram.com/${insta}⁠;
+const heroWa = document.getElementById('heroWaChat');
+if (heroWa) heroWa.href = ⁠${waLink}?text=${encodeURIComponent('مرحباً ALI MODA general trading، أود الاستفسار عن التشكيلة')}⁠;
+const headerWa = document.getElementById('headerWhatsappBtn');
+if (headerWa) headerWa.href = waLink;
+const floatWa = document.getElementById('floatingWa');
+if (floatWa) floatWa.href = ⁠${waLink}?text=${encodeURIComponent('مرحباً ALI MODA general trading')}⁠;
+const floatInsta = document.getElementById('floatingInsta');
+if (floatInsta) floatInsta.href = instaLink;
+}
+window.addEventListener('DOMContentLoaded', () => {
+document.getElementById('yearVal').innerText = new Date().getFullYear();
+setupDatabase();
+changeLanguage(currentLang);
+updateAdminButton();
+applyContactLinks();
+lucide.createIcons();
+});
+</script>
+</body>
+</html>
